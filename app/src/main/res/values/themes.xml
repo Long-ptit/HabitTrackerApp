@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.CreateBaseProject" parent="Base.Theme.CreateBaseProject" />
+
+    <style name="DialogLoading" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowMinWidthMinor">30%</item>
+        <item name="android:windowMinWidthMajor">30%</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>
