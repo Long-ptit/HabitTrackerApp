@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.example.createbaseproject.base.activity.BaseActivity
 import com.example.createbaseproject.common.Logger
 import com.example.createbaseproject.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding

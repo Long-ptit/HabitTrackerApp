@@ -64,6 +64,9 @@ dependencies {
     val nav_version = "2.7.6"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // reflection-free flavor
+    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.9")
 }
 
 kapt {
