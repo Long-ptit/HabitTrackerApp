@@ -6,6 +6,7 @@ import com.example.createbaseproject.common.Logger
 import com.example.createbaseproject.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 

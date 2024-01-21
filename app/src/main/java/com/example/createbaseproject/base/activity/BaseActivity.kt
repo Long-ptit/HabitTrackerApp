@@ -21,7 +21,6 @@ import kotlin.math.ceil
 
 open abstract class BaseActivity : AppCompatActivity() {
 
-    protected open val viewModel: BaseViewModel by viewModels();
     private lateinit var loadingDialog: AlertDialog
 
     protected fun showErrorDialog(message: String) {
@@ -34,18 +33,9 @@ open abstract class BaseActivity : AppCompatActivity() {
         )
     }
 
-    protected open fun bindViewModel() {
-        with(viewModel) {
-            loadingStateFlow.onEachWithLifecycleScope {
-                showLoading(it)
-            }
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initDialog()
-        bindViewModel()
     }
 
     protected fun <T> Flow<T>.onEachWithLifecycleScope(action: suspend (T) -> Unit) {

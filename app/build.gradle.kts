@@ -54,8 +54,8 @@ dependencies {
 
 
     //dagger hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt("com.google.dagger:hilt-android-compiler:2.47")
 
     //fragment KTX
     implementation("androidx.fragment:fragment-ktx:1.6.2")
@@ -65,8 +65,18 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
-    // reflection-free flavor
+    //reflection-free flavor
     implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.9")
+
+    //room
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:room_version")
+    // To use Kotlin Symbol Processing (KSP)
 }
 
 kapt {

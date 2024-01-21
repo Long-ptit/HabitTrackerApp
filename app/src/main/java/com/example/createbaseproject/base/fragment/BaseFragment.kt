@@ -10,6 +10,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.example.createbaseproject.base.activity.BaseActivity
 import com.example.createbaseproject.base.viewmodel.BaseViewModel
+import com.example.createbaseproject.common.Logger
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -38,6 +39,9 @@ abstract class BaseFragment : Fragment{
         with(viewModel) {
             loadingStateFlow.onEachWithLifecycleScope {
                 showLoading(it)
+            }
+            exceptionMessage.onEachWithLifecycleScope {
+                Logger.log("Show Error in the Screen")
             }
         }
     }
