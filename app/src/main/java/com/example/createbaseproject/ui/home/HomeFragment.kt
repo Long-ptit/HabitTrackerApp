@@ -4,7 +4,6 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.createbaseproject.R
 import com.example.createbaseproject.base.fragment.BaseFragment
-import com.example.createbaseproject.base.viewmodel.BaseViewModel
 import com.example.createbaseproject.common.Logger
 import com.example.createbaseproject.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,12 +17,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     override fun initView() {
         super.initView()
         Logger.log("OnViewCreated")
-        viewModel.getName()
-        viewModel.testFlow.onEachWithLifecycleScope {
-
-        }
     }
-
-
-
 }
+
+

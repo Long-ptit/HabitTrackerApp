@@ -7,5 +7,9 @@ import com.example.createbaseproject.data.database.entities.HabitEntity
 
 @Database(entities = [HabitEntity::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
+
+    companion object {
+        const val NAME = "Habit Tracker"
+    }
     abstract fun habitDao(): HabitDao
 }

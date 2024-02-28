@@ -1,10 +1,21 @@
 package com.example.createbaseproject.data.models
 
-import androidx.room.ColumnInfo
-import androidx.room.PrimaryKey
+import com.example.createbaseproject.data.database.entities.HabitEntity
 
-data class Habit(
-    @PrimaryKey val id: Int,
-    @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "content") val content: String
-)
+class Habit(
+    var id: Long = -1,
+    var name: String? = null,
+    var content: String? = null
+) {
+    fun toHabitEntity(): HabitEntity {
+        return HabitEntity(
+            id = id ,
+            name = name ?: "",
+            content = content ?: ""
+        )
+    }
+}
+
+fun HabitEntity.toHabit(): Habit {
+    return Habit(name = name, content = content, id = id)
+}

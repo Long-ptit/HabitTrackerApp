@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface HabitDao {
 
-//    @Query("SELECT * FROM habit")
-//    suspend fun getAll(): Flow<HabitEntity>
+    @Query("SELECT * FROM habit")
+    fun getAll(): Flow<List<HabitEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertHabit(vararg habits: HabitEntity)
